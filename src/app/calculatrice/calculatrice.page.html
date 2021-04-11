@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons (click)="getBackHome()" slot="start">
+      <ion-menu-button menu="first"></ion-menu-button>
+    </ion-buttons>
+    <img src="assets/images/LogoMONEYSA1.png" style="display: inline; margin-left: 35%; height:15%;width:15%">
+    <img slot="end" src="assets/images/img.jpeg" style="display: inline;float: right; height:10%;width:10%">
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+   <form [formGroup]="CalculForm">
+    <ion-item>
+      <ion-label type="text" position="stacked">Montant</ion-label>
+      <ion-input type="number" formControlName="montant" placeholder="montant"></ion-input>
+    </ion-item>
+    <div>
+      <button (click)="calc()" class="submit">Calculer</button>
+    </div>
+   </form>
+   <div>{{frais}}</div>
+</ion-content>

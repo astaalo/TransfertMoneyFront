@@ -1,0 +1,49 @@
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item routerLink="/accueil-user">
+            <ion-icon color="light" name="home" slot="start"></ion-icon>
+            <ion-label>Accueil</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/transactions">
+            <ion-icon color="light" name="timer-outline" slot="start"></ion-icon>
+            <ion-label>Transactions</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/commission">
+            <ion-icon color="light" name="cash-outline" slot="start"></ion-icon>
+            <ion-label>Commission</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/calculatrice">
+            <ion-icon color="light" name="calculator-outline" slot="start"></ion-icon>
+            <ion-label>Calculatrice</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+    <ion-footer>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item button (click)="deconnexion()">
+            <ion-icon color="light" name="log-out-outline" slot="start"></ion-icon>
+            <ion-label color="secondary">Déconnexion</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-footer>
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

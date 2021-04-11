@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row >
+      <ion-col (click)="getBackHome()">
+        <ion-icon button name="home" style="color:#008e8e; height:60%; width:40%;"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <img src="assets/images/LogoMONEYSA1.png" style="display: inline; margin-left: 25%; height:80%;width:50%">
+      </ion-col>
+    </ion-row>
+     <h1>Liste Utilisateur</h1>
+     <hr style="height: 3px;width: 30%;background-color: #008e8e;"> 
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+ 
+ 
+    <ion-row class="header-row" >
+      <ion-col>
+        <ion-text>Nom</ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text>Role</ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text>Actions</ion-text>
+      </ion-col>
+    </ion-row>
+ 
+    <ion-row  *ngFor="let list of lists"> 
+      <ion-col>
+        <ion-text class="ion-text-center">
+          {{list.firstname}}
+        </ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text>
+          {{list.profil.libelle}}
+        </ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text>
+          <ion-icon button name="trash-outline" style="color:red; height:55%; width:75%;"></ion-icon>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+</ion-content>

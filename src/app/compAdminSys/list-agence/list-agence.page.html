@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col (click)="getBackHome()">
+          <ion-icon button name="home" style="color:#008e8e; height:55%; width:55%;"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-avatar>
+          <img src="assets/images/LogoMONEYSA1.png" style="height:55%;width:55%">
+        </ion-avatar>
+      </ion-col>
+     </ion-row>
+     <h1>Liste Agence </h1>
+     <hr style="height: 3px;width: 50%;background-color: #008e8e;"> 
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+ <!-- <ion-grid class="ion-text-center">-->
+    <ion-row class="header-row">
+      <ion-col>
+        <ion-text>Nom Agence</ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text>Adresse</ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text>Compte</ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text>Actions</ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let list of lists">
+      <ion-col>
+        <ion-text class="ion-text-center">
+          {{list.nomAgence}}
+        </ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text>
+          {{list.address}}
+        </ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text>
+          {{list.compte.numCompte}}
+        </ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text>
+          <ion-icon button name="trash-outline" style="color:red; height:55%; width:75%;"></ion-icon>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  <!--</ion-grid> -->
+
+</ion-content>
+

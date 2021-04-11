@@ -1,0 +1,37 @@
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+  <ion-row class="logo">
+   <ion-img src="assets/images/LogoMONEYSA1.png" style="height:50%;width:50%;"></ion-img>
+  </ion-row> 
+  <h1 class="text-aligne:center">Connexion</h1>
+  <hr style="height: 3px;width: 65px;background-color: #008e8e;"> 
+</ion-card>
+
+   <div class="block">
+   <form (ngSubmit)="connexionUser()" [formGroup]="loginForm">
+    <!-- {{loginForm.value | json}} -->
+     <ion-item>
+       <ion-label position="stacked">Telephone</ion-label>
+       <ion-input type="text" formControlName="phone" placeholder="Enter Telephone"></ion-input>
+       <small *ngIf="f.phone.invalid && f.phone.touched" color="danger">Enter a valid Telephone</small>
+     </ion-item>
+     <ion-item>
+       <ion-label position="stacked">Password</ion-label>
+       <ion-input type="password" formControlName="password" placeholder="Enter Password"></ion-input>
+      <small *ngIf="f.password.invalid && f.password.touched" class="p-text-danger">Enter a valid Password</small>
+     </ion-item>
+     <div>
+       <ion-button class="btn" color="danger">Password Oublié!</ion-button>
+     </div>
+     <div>
+       <button type="submit" expand="block" class="submit">Se connecter</button>
+     </div>
+   </form>
+
+   <div *ngIf="errorMessage" class="alert">
+    {{errorMessage}}
+  </div>
+
+ </div>
+</ion-content>

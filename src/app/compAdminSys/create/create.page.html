@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row >
+      <ion-col (click)="getBackHome()">
+        <ion-icon button name="home" style="color:#008e8e; height:60%; width:40%;"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <img src="assets/images/LogoMONEYSA1.png" style="display: inline; margin-left: 25%; height:80%;width:50%">
+      </ion-col>
+     </ion-row>
+     <h1>Creer Agence</h1>
+     <hr style="height: 3px;width: 35%;background-color: #008e8e;"> 
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+      <div class="formulaire">
+        <form [formGroup]="myForm" >
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="stacked">Nom Agence</ion-label>
+                <ion-input type="text" formControlName="nomAgence" placeholder="Nom"></ion-input>
+                <small *ngIf="f.nomAgence.invalid && f.nomAgence.touched" color="danger">Enter a valid NOM</small>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+                <ion-item>
+                  <ion-label position="stacked">Adresse</ion-label>
+                  <ion-input type="text" formControlName="adresse" placeholder="adresse"></ion-input>
+                  <small *ngIf="f.adresse.invalid && f.adresse.touched" color="danger">Enter a valid Adresse</small>
+                </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label position="stacked">Compte</ion-label>
+                  <ion-input type="text" formControlName="compte" placeholder="compte"></ion-input>
+                  <small *ngIf="f.compte.invalid && f.compte.touched" color="danger">Enter a valid Compte</small>
+                </ion-item>
+              </ion-col>
+          </ion-row>
+            <div>
+              <ion-button (click)="creerAgence()" class="btn" expand="block">Creer</ion-button>
+            </div>
+        </form>
+      </div>
+</ion-content>

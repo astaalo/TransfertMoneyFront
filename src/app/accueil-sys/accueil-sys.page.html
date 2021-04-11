@@ -1,0 +1,97 @@
+<ion-row>
+  <ion-col>
+   <ion-card class="carte">
+      <ion-card-content>
+        <h4>Mon Solde Disponible
+          <ion-icon name="eye-off-outline" slot="start" style="margin:left"></ion-icon>
+        </h4>
+        <h1>{{solde}}</h1>
+        <h6>Mise a jour le 21-02-2021 à 13h</h6>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-row>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first"></ion-menu-button>
+    </ion-buttons>
+    <img src="assets/images/LogoMONEYSA1.png" style="display: inline; margin-left: 35%; height:15%;width:15%">
+    <img slot="end" src="assets/images/img.jpeg" style="display: inline;float: right; height:10%;width:10%">
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="block"> 
+    <ion-row>
+      <ion-col size="6">
+        <ion-card class="carte">
+          <ion-item button routerLink="/ajout" style="width:100%">
+            <ion-icon name="person-add-outline"></ion-icon>
+            <ion-label>
+              <h2>Ajout User</h2>
+            </ion-label>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card class="carte">
+          <ion-item button routerLink="/list-agence" style="width:100%">
+            <ion-icon name="list-outline"></ion-icon>
+            <ion-label>
+              <h2>Liste Agence</h2>
+            </ion-label>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card class="carte">
+          <ion-item button routerLink="/list-compte" style="width:100%">
+            <ion-icon name="create-outline"></ion-icon>
+            <ion-label>
+              <h2>Liste Compte</h2>
+            </ion-label>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card class="carte">
+          <ion-item button routerLink="/list-caissier" style="width:100%">
+            <ion-icon name="list-outline"></ion-icon>
+            <ion-label>
+              <h2>Liste Caissier</h2>
+            </ion-label>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card class="carte">
+          <ion-item button routerLink="/create" style="width:100%">
+            <ion-icon name="create-outline"></ion-icon>
+            <ion-label>
+              <h2>Creer Agence</h2>
+            </ion-label>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card class="carte">
+          <ion-item button routerLink="/list" style="width:100%">
+            <ion-icon name="list-outline"></ion-icon>
+            <ion-label>
+              <h2>Liste Utilisateur</h2>
+            </ion-label>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
+    <ion-app>
+      <ion-nav root="nav-home"></ion-nav>
+    </ion-app>
+ </ion-content>
+
+

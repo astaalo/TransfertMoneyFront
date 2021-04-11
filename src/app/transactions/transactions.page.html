@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col (click)="getBackHome()">
+          <ion-icon button name="home" style="color:#008e8e; height:55%; width:55%;"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-avatar>
+          <img src="assets/images/LogoMONEYSA1.png" style="height:55%;width:55%">
+        </ion-avatar>
+      </ion-col>
+     </ion-row>
+     <h1>Mes Transactions </h1>
+     <hr style="height: 3px;width: 50%;background-color: #008e8e;"> 
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+ <!-- <ion-grid class="ion-text-center">-->
+    <ion-row class="ion-margin"> 
+      <ion-col size="4">
+        <ion-item>
+          <ion-label>Type</ion-label>
+            <ion-select>
+              <ion-select-option value="depot">Depot</ion-select-option>
+              <ion-select-option value="retrait">Retrait</ion-select-option>
+            </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size="4">
+        <ion-item>
+          <ion-label position="floating">Du</ion-label>
+          <ion-datetime displayFormat="MM/DD/YYYY" min="1994-12-31" max="2021-12-31" value=""></ion-datetime>
+        </ion-item>
+      </ion-col>
+      <ion-col size="4">
+        <ion-item>
+          <ion-label position="floating">Au</ion-label>
+          <ion-datetime displayFormat="MM/DD/YYYY" min="1994-03-14" max="2021-12-09" value=""></ion-datetime>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="header-row">
+      <ion-col>
+        <ion-text>Date</ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text>Type</ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text>Montant</ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let transaction of transactions">
+      <ion-col>
+        <ion-text class="ion-text-center">
+          {{transaction.date}}
+        </ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text>
+          {{transaction.type}}
+        </ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text>
+          {{transaction.montant}}
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  <!--</ion-grid> -->
+
+</ion-content>

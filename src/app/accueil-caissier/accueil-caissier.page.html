@@ -1,0 +1,63 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first"></ion-menu-button>
+    </ion-buttons>
+    <img src="assets/images/LogoMONEYSA1.png" style="display: inline; margin-left: 35%; height:15%;width:15%">
+    <img src="assets/images/img.jpeg" style="display: inline;float: right; height:15%;width:15%">
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <ion-row>
+    <ion-col>
+     <ion-card class="carte">
+        <ion-card-content>
+          <h4>Mon Solde Disponible
+            <ion-icon name="eye-off-outline" slot="start" style="margin:left"></ion-icon>
+          </h4>
+          <h1>{{solde}}</h1>
+          <h6>Mise a jour le 21-02-2021 à 13h</h6>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-item button routerLink="/transactions/depot" style="width:100%">
+        <ion-icon name="return-up-forward-outline" style="color:orange;"></ion-icon>
+        <ion-label>
+          <h2>Depot</h2>
+        </ion-label>
+    </ion-item>
+    <ion-item button routerLink="/transactions" style="width:100%">
+        <ion-icon name="repeat-outline" style="color:orange"></ion-icon>
+        <ion-label>
+          <h2>Mes Transactions</h2>
+        </ion-label>
+    </ion-item>
+    <ion-item button routerLink="/commission" style="width:100%">
+      <ion-icon name="podium-outline" style="color:orange"></ion-icon>
+        <ion-label>
+          <h2>Mes Commissions</h2>
+        </ion-label>
+    </ion-item>
+    <ion-item button routerLink="/calculatrice" style="width:100%">
+      <ion-icon name="calculator-outline" style="color:orange"></ion-icon>
+      <ion-label>
+        <h2>Calculatrice</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item button (click)="deconnexion()"  style="width:100%">
+      <ion-icon name="power-outline" style="color:orange"></ion-icon>
+        <ion-label>
+          <h2>Deconnexion</h2>
+        </ion-label>
+    </ion-item>
+    <ion-app>
+      <ion-nav root="nav-home"></ion-nav>
+    </ion-app>
+  </ion-row>
+ </ion-content>
+
+

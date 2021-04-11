@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col (click)="getBackHome()">
+          <ion-icon button name="home" style="height:55%;width:55%;color: #008e8e;"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-avatar>
+          <img src="assets/images/LogoMONEYSA1.png" style="height:55%;width:55%">
+        </ion-avatar>
+      </ion-col>
+     </ion-row>
+     <ion-item style="margin-left:20%">
+     <ion-icon name="return-up-forward-outline" style=" margin-right: 8px; color: #008e8e"></ion-icon>
+     <h1>Retrait</h1>
+     </ion-item>
+     <hr style="height: 3px;width: 30%;background-color: #008e8e;"> 
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="formRetrait" (ngSubmit)="GetRetrait()">
+    <ion-header [translucent]="true" style="margin-bottom: 5%; height: 20%;width: 100%; margin-top: 10px; padding: 2px">
+      <ion-item  style="top: 20px">
+        <ion-label position="floating">Code</ion-label>
+        <ion-input [(ngModel)]="codeTrans"  type="text" placeholder="134-503-254" formControlName="codeTrans" ></ion-input>
+      </ion-item>
+    </ion-header>
+    <div [formGroupName]="'clientRetrait'">
+      <ion-card class="carte">
+        <ion-segment>
+          <ion-segment-button value="beneficiaire" (click)="ShowAndHide(1)">
+            <ion-label style="color:#008e8e;">Beneficiaire</ion-label>
+            <div class="menu-bar-bottom" [hidden]="hide"></div>
+          </ion-segment-button>
+          <ion-segment-button value="emetteur" (click)="ShowAndHide(2)">
+            <ion-label style="color:#008e8e;">Emetteur</ion-label>
+            <div class="menu-bar-bottom" [hidden]="!hide"></div>
+          </ion-segment-button>
+        </ion-segment>
+    </ion-card>
+      <div [hidden]="hide" id="content-form-emeteur">
+        <ion-item *ngIf="dataCode">
+            <ion-label position="floating">N° CNI</ion-label>
+            <ion-input  formControlName="cni"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="dataCode">
+            <ion-label position="floating">Nom</ion-label>
+            <ion-input readonly style="top: 10px">{{dataCode.nomBen}}</ion-input>
+        </ion-item>
+        <ion-item *ngIf="dataCode">
+            <ion-label position="floating" style="top: 10px">Prenom</ion-label>
+            <ion-input readonly style="top: 10px" >{{dataCode.prenomBen}}</ion-input>
+        </ion-item>
+        <ion-item *ngIf="dataCode">
+            <ion-label position="floating">Montant A Recevoir</ion-label>
+            <ion-input style="top:10px" readonly>{{dataCode.montant}}</ion-input>
+        </ion-item>
+        <ion-item *ngIf="dataCode">
+            <ion-label position="floating">Telephone</ion-label><br>
+            <ion-input readonly style="top: 10px">{{dataCode.phoneBen}}</ion-input>
+        </ion-item>
+        <ion-item *ngIf="dataCode">
+            <ion-label position="floating">Date de retrait</ion-label><br>
+            <ion-input readonly style="top: 15px">{{dataCode.dateRetrait}}</ion-input>
+        </ion-item>
+      </div>
+      <div [hidden]="!hide" id="content-form-beneficiaire">
+        <ion-item *ngIf="dataCode">
+            <ion-label position="floating" style="top: 10px">Nom</ion-label>
+            <ion-input readonly style="top: 10px" >{{dataCode.nomEmetteur}}</ion-input>
+        </ion-item>
+        <ion-item *ngIf="dataCode">
+            <ion-label position="floating" style="top: 10px">Prenom</ion-label>
+            <ion-input readonly style="top: 10px" >{{dataCode.prenomEmetteur}}</ion-input>
+        </ion-item>
+        <ion-item *ngIf="dataCode">
+            <ion-label position="floating">Telephone</ion-label>
+            <ion-input readonly style="top: 10px" >{{dataCode.phoneEmetteur}}</ion-input>
+        </ion-item>
+        <ion-item *ngIf="dataCode">
+            <ion-label position="floating">Date d'envoie</ion-label>
+            <ion-input readonly style="top: 10px">{{dataCode.dateDepot}}</ion-input>
+        </ion-item>
+        <ion-button (click)="presentAlertConfirm()" type="submit" color="secondary" style="position: relative;top:20px;width: 70%;margin: auto;height: 50px;" expand="block" shape="round" fill="outline" color="secondary">Retirer</ion-button>
+      </div>
+    </div>
+  </form>
+</ion-content>
